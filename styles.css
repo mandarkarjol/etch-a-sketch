@@ -6,18 +6,15 @@ body{
     width: auto;
 }
 .container{
+    box-sizing: border-box;
+    width: 960px; /* Can use 50vw instead to use 50% of the viewport width*/
+    height: 960px; /* Can use 50vw instead to use 50% of the viewport width*/
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
-    padding: 10px;
 }
 .container div{
-    width:20px;
-    height:20px;
-    flex: none;
+    width: 10px;
+    flex: auto;
     box-sizing: border-box;
     border: solid slategray 0.1px;
     background-color: black;

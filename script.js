@@ -7,5 +7,19 @@ function makeSquareGrid(targetDiv, size = 16){
     };
     
 };
+
+// Draw square grids
 const containerDiv = document.querySelector(".container");
 makeSquareGrid(containerDiv);
+
+// Toggle ink flow on / off while drawing on canvas
+let hover = false;
+containerDiv.addEventListener("click", (e) => {
+    e.target.style.backgroundColor = "white";
+    hover = !hover;
+});
+containerDiv.addEventListener("mouseover", (e) => {
+    if (hover){
+        e.target.style.backgroundColor = "white";
+    }
+});

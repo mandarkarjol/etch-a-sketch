@@ -3,6 +3,7 @@ function makeSquareGrid(targetDiv, size = 16){
     for(let i = 0; i <= (size * size) - 1; i++ ){
         const squareDiv = document.createElement("div");
         squareDiv.style.width = `${targetDiv.clientWidth / size}px`;
+        squareDiv.style.height = `${targetDiv.clientHeight / size}px`;
         targetDiv.append(squareDiv);
     };
     
@@ -23,3 +24,18 @@ containerDiv.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = "white";
     }
 });
+
+// Change grid qty based on user size
+const buttonElem = document.querySelector("button");
+buttonElem.onclick = () => {
+    while (containerDiv.firstChild){
+        containerDiv.removeChild(containerDiv.firstChild);
+    };
+    size = prompt("Enter no. of squares per side (Max limit is 100)");
+    if (size <= 100){
+        makeSquareGrid(containerDiv, size);
+    }
+    else {
+        size = prompt("Enter no. of squares per side (Max limit is 100)");
+    }
+};
